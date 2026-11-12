@@ -1,0 +1,141 @@
+/* Estilos Especializados de Acessibilidade para Dislexia e Tema de Futebol */
+@import url('https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700;800;900&family=Bungee&display=swap');
+
+:root {
+  --font-dyslexia: 'Lexend', system-ui, -apple-system, sans-serif;
+  --font-title: 'Bungee', cursive, sans-serif;
+  
+  /* Cores de alto contraste e baixo estresse visual */
+  --pitch-green: #0f5132;
+  --pitch-light: #198754;
+  --chalk-white: #f8fafc;
+  --gold-cup: #f59e0b;
+}
+
+body {
+  font-family: var(--font-dyslexia);
+  letter-spacing: 0.04em;
+  line-height: 1.6;
+  -webkit-tap-highlight-color: transparent;
+  user-select: none;
+}
+
+/* Títulos com estilo de transmissão esportiva */
+.font-display {
+  font-family: var(--font-title);
+  letter-spacing: 0.06em;
+}
+
+/* Texto especial para leitura assistida de dislexia */
+.reading-text {
+  font-size: 1.45rem;
+  letter-spacing: 0.08em;
+  word-spacing: 0.25em;
+  line-height: 2.1;
+}
+
+/* Cores de Sílabas Alternadas (reduz o efeito de "amontoamento" visual) */
+.syl-0 { color: #0284c7; background-color: #e0f2fe; border-radius: 6px; padding: 2px 6px; margin: 0 2px; }
+.syl-1 { color: #16a34a; background-color: #dcfce7; border-radius: 6px; padding: 2px 6px; margin: 0 2px; }
+.syl-2 { color: #ea580c; background-color: #ffedd5; border-radius: 6px; padding: 2px 6px; margin: 0 2px; }
+.syl-3 { color: #9333ea; background-color: #f3e8ff; border-radius: 6px; padding: 2px 6px; margin: 0 2px; }
+
+/* Destaque especial para letras do fonema-alvo */
+.target-phoneme-ch {
+  color: #d97706;
+  font-weight: 800;
+  text-decoration: underline wavy #f59e0b 2px;
+}
+.target-phoneme-pt {
+  color: #2563eb;
+  font-weight: 800;
+  border-bottom: 3px solid #3b82f6;
+}
+.target-phoneme-r {
+  color: #059669;
+  font-weight: 800;
+  text-decoration: underline wavy #10b981 2px;
+}
+.target-phoneme-s {
+  color: #7c3aed;
+  font-weight: 800;
+  border-bottom: 3px solid #8b5cf6;
+}
+
+/* Gramado do Estádio (Background do campo de futebol) */
+.pitch-pattern {
+  background: repeating-linear-gradient(
+    to bottom,
+    #15803d,
+    #15803d 35px,
+    #166534 35px,
+    #166534 70px
+  );
+  position: relative;
+  overflow: hidden;
+}
+
+/* Linhas de cal do campo */
+.pitch-lines {
+  background-image: 
+    radial-gradient(circle at center, transparent 70px, rgba(255, 255, 255, 0.4) 70px, rgba(255, 255, 255, 0.4) 73px, transparent 73px),
+    linear-gradient(to right, transparent calc(50% - 1.5px), rgba(255, 255, 255, 0.4) calc(50% - 1.5px), rgba(255, 255, 255, 0.4) calc(50% + 1.5px), transparent calc(50% + 1.5px));
+}
+
+/* Card estilo EA FC / Ultimate Team */
+.craque-card {
+  background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+  border: 3px solid #fbbf24;
+  box-shadow: 0 10px 25px -5px rgba(245, 158, 11, 0.3), 0 8px 10px -6px rgba(245, 158, 11, 0.2);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.craque-card:hover {
+  transform: translateY(-4px) scale(1.02);
+  box-shadow: 0 20px 30px -10px rgba(245, 158, 11, 0.4);
+}
+
+/* Animação de Chute e Gol */
+@keyframes goalBounce {
+  0%, 100% { transform: scale(1) rotate(0deg); }
+  25% { transform: scale(1.2) rotate(-6deg); }
+  50% { transform: scale(1.35) rotate(6deg); }
+  75% { transform: scale(1.15) rotate(-3deg); }
+}
+
+.animate-goal {
+  animation: goalBounce 0.8s ease-in-out infinite alternate;
+}
+
+/* Animação da Trave (vibração metálica) */
+@keyframes crossbarShake {
+  0% { transform: translateX(0); }
+  20% { transform: translateX(-8px) rotate(-1deg); }
+  40% { transform: translateX(8px) rotate(1deg); }
+  60% { transform: translateX(-5px); }
+  80% { transform: translateX(5px); }
+  100% { transform: translateX(0); }
+}
+
+.animate-crossbar {
+  animation: crossbarShake 0.5s ease-in-out;
+}
+
+/* Efeito de Prancheta Tática / Dica do VAR */
+.tactical-board {
+  background: #022c22;
+  border: 3px dashed #34d399;
+  position: relative;
+}
+
+/* Botões com alvos táteis generosos para crianças / tablet */
+.touch-btn {
+  min-height: 54px;
+  min-width: 54px;
+  touch-action: manipulation;
+  transition: all 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.touch-btn:active {
+  transform: scale(0.95);
+}

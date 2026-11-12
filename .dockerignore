@@ -1,0 +1,8 @@
+.git
+.gitignore
+scratch
+*.py
+jogar.sh
+README.md
+Dockerfile*
+docker-compose*.yml
